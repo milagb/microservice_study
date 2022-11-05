@@ -2,6 +2,7 @@ const express = require ('express');
 const app = express();
 
 const notes = {};
+count = 0;
 
 app.get ('/notes', (req, res) => {
     res.send(notes);
@@ -9,7 +10,12 @@ app.get ('/notes', (req, res) => {
 });
 
 app.post('/notes', (req, res) => {
-
+    count++;
+    const { text } = req.body;
+    notes[count] = {
+        count, text
+    }
+    res.status(201).send(notes[count]);
 });
 
 app.listen(4000, () => {
