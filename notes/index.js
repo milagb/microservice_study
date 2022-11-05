@@ -11,10 +11,10 @@ app.get ('/notes', (req, res) => {
 
 app.post('/notes', (req, res) => {
     count++;
-    const { text } = req.body;
+    const { text } = req.body || {};
     notes[count] = {
         count, text
-    }
+    };
     res.status(201).send(notes[count]);
 });
 
