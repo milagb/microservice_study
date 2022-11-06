@@ -18,34 +18,6 @@ app.post('/notes', (req, res) => {
     notes[count] = {
         count, text
     };
-    // console.log(text);
-    // console.log({text});
-    // console.log({text, text});
-
-    // let num = 12;
-    // let binario = true;
-    // let str = "string"
-
-    let data = {
-        num: 1,
-        binario: true,
-        str: "joao",
-        obj: {cacete: "em pé"}
-    };
-
-    // let { num, binario, str } = data;
-    let num = data.num;
-    // let text = req.body.text;
-    let { obj } = data;
-    let { cacete } = data.obj;
-
-    console.log(num);
-    console.log(obj);
-    console.log(cacete);
-
-    // console.log(binario);
-    // console.log(str);
-
 
     res.status(201).send(notes[count]);    
 });
