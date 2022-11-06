@@ -1,6 +1,8 @@
 const express = require ('express');
 const app = express();
 
+const observationsForNotesID = {};
+
 app.post('/notes/:id/observations', (req, res) => {
 
 });
